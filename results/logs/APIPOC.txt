@@ -1,0 +1,12 @@
+@APITest
+Feature: Validate the API responses according to the Acceptance Criteria # features/APIPOC.feature:2
+
+  Background: Set base url and headers  # features/APIPOC.feature:4
+
+  @smoke
+  Scenario: To validate the status code and status message                         # features/APIPOC.feature:8
+    Given I set base URL to "context.base_url"                                     # features/steps/apitest.py:6
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" # features/steps/apitest.py:13
+    Then the response status code should equal "200"                               # features/steps/apitest.py:19
+    And the response status message should equal "OK"                              # features/steps/apitest.py:24
+

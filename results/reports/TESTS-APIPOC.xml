@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite errors="0" failures="0" hostname="DESKTOP-I4PGO5M" name="APIPOC.Validate the API responses according to the Acceptance Criteria" skipped="0" tests="1" time="1.984" timestamp="2019-07-10T00:07:07.801000"><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate the status code and status message" status="passed" time="1.984"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario: To validate the status code and status message
+    Given I set base URL to "context.base_url" ... passed in 0.000s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.984s
+    Then the response status code should equal "200" ... passed in 0.000s
+    And the response status message should equal "OK" ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
