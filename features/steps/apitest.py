@@ -1,6 +1,7 @@
+import jpath
 from behave import *
 
-from bin.apicalls import *
+from utils.apicalls import *
 
 
 @given(u'I set base URL to "{base_url}"')
@@ -24,3 +25,21 @@ def status_code_check(context, exp_status_code):
 @then(u'the response status message should equal "{msg}"')
 def status_msg_check(context, msg):
     assert context.resp.reason == msg, "Invalid message received - {}".format(context.resp.reason)
+
+@then(u'value at jsonpath "{json_path}" in response should be "{exp_value}"')
+def step_impl(context,json_path,exp_value):
+    data = context.resp.json()
+    logger.debug(data)
+    actual_value = jpath.get(json_path, data)
+    logger.info("Actual value from response: {}".format(actual_value))
+    assert str(actual_value) == str(exp_value), "Mismatch found Exp value :{}, Actual value: {}".format(exp_value,actual_value)
+    logger.info("Pattern found in response")
+
+@then(u'value at jsonpath "{json_path}" in response should contain "{exp_value}"')
+def step_impl(context,json_path,exp_value):
+    data = context.resp.json()
+    logger.debug(data)
+    actual_value = jpath.get(json_path, data)
+    logger.info("Actual value from response: {}".format(actual_value))
+    assert exp_value in actual_value, "Pattern not found in response Pattern :{}, Actual value: {}".format(exp_value,actual_value)
+    logger.info("Pattern found in response")

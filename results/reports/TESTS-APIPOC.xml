@@ -1,14 +1,49 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuite errors="0" failures="0" hostname="DESKTOP-I4PGO5M" name="APIPOC.Validate the API responses according to the Acceptance Criteria" skipped="0" tests="1" time="1.984" timestamp="2019-07-10T00:07:07.801000"><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate the status code and status message" status="passed" time="1.984"><system-out>
+<testsuite errors="0" failures="0" hostname="DESKTOP-I4PGO5M" name="APIPOC.Validate the API responses according to the Acceptance Criteria" skipped="0" tests="4" time="0.0" timestamp="2019-07-10T08:40:23.234700"><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate the status code and status message" status="untested" time="0"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
   Scenario: To validate the status code and status message
-    Given I set base URL to "context.base_url" ... passed in 0.000s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.984s
-    Then the response status code should equal "200" ... passed in 0.000s
-    And the response status message should equal "OK" ... passed in 0.000s
+    Given I set base URL to "context.base_url" ... untested in 0.000s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... untested in 0.000s
+    Then the response status code should equal "200" ... untested in 0.000s
+    And the response status message should equal "OK" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate whether Carbon credits is present in response" status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: To validate whether Carbon credits is present in response
+    Given I set base URL to "context.base_url" ... untested in 0.000s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... untested in 0.000s
+    Then the response status code should equal "200" ... untested in 0.000s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate whether CanRelist is true" status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: To validate whether CanRelist is true
+    Given I set base URL to "context.base_url" ... untested in 0.000s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... untested in 0.000s
+    Then the response status code should equal "200" ... untested in 0.000s
+    And value at jsonpath ".CanRelist" in response should be "True" ... untested in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="APIPOC.Validate the API responses according to the Acceptance Criteria" name="To validate whether CanRelist is true" status="untested" time="0"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: To validate whether CanRelist is true
+    Given I set base URL to "context.base_url" ... untested in 0.000s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... untested in 0.000s
+    Then the response status code should equal "200" ... untested in 0.000s
+    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" ... untested in 0.000s
 
 @scenario.end
 --------------------------------------------------------------------------------
