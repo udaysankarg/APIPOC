@@ -1,4 +1,10 @@
 {
-  "base_url" : "https://api.tmsandbox.co.nz/v1"
+  "base_url" : "https://api.tmsandbox.co.nz/v1",
+  "GET" : {
+    "Category":"/Categories/6327/Details.json?catalogue=false"
+  },
+  "POST" : {
+
+  }
 
 }
