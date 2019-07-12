@@ -1,0 +1,87 @@
+@APITest
+Feature: Validate the details of "Carbon credits" farming industry from the API response # features/APIPOC.feature:2
+  For CategoryId:6327, Name should be Carbon credits
+  CanRelist should be True and Gallery Promotion should have 2x larger image in the Description
+  Background: Setting base url  # features/APIPOC.feature:6
+
+  @smoke
+  Scenario Outline: To validate the status code and status message -- @Response code check @6327  # features/APIPOC.feature:17
+    Given I set base URL to "context.base_url"                                                    # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                              # features/steps/apitest.py:30
+    And the response status message should equal "OK"                                             # features/steps/apitest.py:37
+
+  @smoke
+  Scenario Outline: To validate the status code and status message -- @Response code check @1234  # features/APIPOC.feature:18
+    Given I set base URL to "context.base_url"                                                    # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/1234/Details.json?catalogue=false"                # features/steps/apitest.py:16
+    Then the response status code should equal "400"                                              # features/steps/apitest.py:30
+    And the response status message should equal "Bad Request"                                    # features/steps/apitest.py:37
+
+  @Test
+  Scenario Outline: To validate the status code with different input parameters -- @Response code check  # features/APIPOC.feature:28
+    Given I set base URL to "context.base_url"                                                           # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":False }             # features/steps/apitest.py:22
+    Then the response status code should equal "200"                                                     # features/steps/apitest.py:30
+    And the response status message should equal "OK"                                                    # features/steps/apitest.py:37
+
+  @Test
+  Scenario Outline: To validate the status code with different input parameters -- @Response code check  # features/APIPOC.feature:29
+    Given I set base URL to "context.base_url"                                                           # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":True }              # features/steps/apitest.py:22
+    Then the response status code should equal "200"                                                     # features/steps/apitest.py:30
+    And the response status message should equal "OK"                                                    # features/steps/apitest.py:37
+
+  @Test
+  Scenario Outline: To validate the status code with different input parameters -- @Response code check  # features/APIPOC.feature:30
+    Given I set base URL to "context.base_url"                                                           # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":None }              # features/steps/apitest.py:22
+    Then the response status code should equal "200"                                                     # features/steps/apitest.py:30
+    And the response status message should equal "OK"                                                    # features/steps/apitest.py:37
+
+  @Test @CarbonCredits @AC
+  Scenario: To validate whether details of Carbon credits under Business-farming-industry                        # features/APIPOC.feature:33
+    Given I set base URL to "context.base_url"                                                                   # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                               # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                                             # features/steps/apitest.py:30
+    And value at jsonpath ".CategoryId" in response should be "6327"                                             # features/steps/apitest.py:42
+    And value at jsonpath ".Name" in response should be "Carbon credits"                                         # features/steps/apitest.py:42
+    And value at jsonpath ".CanRelist" in response should be "True"                                              # features/steps/apitest.py:42
+    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" # features/steps/apitest.py:53
+
+  @Test @Promotion
+  Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Basic         # features/APIPOC.feature:51
+    Given I set base URL to "context.base_url"                                                                             # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                                         # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                                                       # features/steps/apitest.py:30
+    And value at jsonpath ".CategoryId" in response should be "6327"                                                       # features/steps/apitest.py:42
+    And value at jsonpath ".Name" in response should be "Carbon credits"                                                   # features/steps/apitest.py:42
+    And value at jsonpath ".Promotions(Name="Basic").Description" in response should contain "Lowest position in category" # features/steps/apitest.py:53
+
+  @Test @Promotion
+  Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Gallery  # features/APIPOC.feature:52
+    Given I set base URL to "context.base_url"                                                                        # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                                    # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                                                  # features/steps/apitest.py:30
+    And value at jsonpath ".CategoryId" in response should be "6327"                                                  # features/steps/apitest.py:42
+    And value at jsonpath ".Name" in response should be "Carbon credits"                                              # features/steps/apitest.py:42
+    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image"      # features/steps/apitest.py:53
+
+  @Test @Promotion
+  Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature  # features/APIPOC.feature:53
+    Given I set base URL to "context.base_url"                                                                        # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                                    # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                                                  # features/steps/apitest.py:30
+    And value at jsonpath ".CategoryId" in response should be "6327"                                                  # features/steps/apitest.py:42
+    And value at jsonpath ".Name" in response should be "Carbon credits"                                              # features/steps/apitest.py:42
+    And value at jsonpath ".Promotions(Name="Feature").Description" in response should contain "4x larger image"      # features/steps/apitest.py:53
+
+  @Test @Promotion
+  Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature Combo          # features/APIPOC.feature:54
+    Given I set base URL to "context.base_url"                                                                                      # features/steps/apitest.py:9
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false"                                                  # features/steps/apitest.py:16
+    Then the response status code should equal "200"                                                                                # features/steps/apitest.py:30
+    And value at jsonpath ".CategoryId" in response should be "6327"                                                                # features/steps/apitest.py:42
+    And value at jsonpath ".Name" in response should be "Carbon credits"                                                            # features/steps/apitest.py:42
+    And value at jsonpath ".Promotions(Name="Feature Combo").Description" in response should contain "Includes benefits of Feature" # features/steps/apitest.py:53
+

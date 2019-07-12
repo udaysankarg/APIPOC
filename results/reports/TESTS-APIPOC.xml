@@ -1,150 +1,150 @@
-<testsuite errors="0" failures="0" hostname="DESKTOP-I4PGO5M" name="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" skipped="0" tests="10" time="13.07964" timestamp="2019-07-11T00:44:49.235402"><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code and status message -- @Response code check @6327" status="passed" time="1.253542"><system-out>
+<testsuite errors="0" failures="0" hostname="DESKTOP-I4PGO5M" name="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" skipped="0" tests="10" time="13.501008" timestamp="2019-07-12T11:29:17.735224"><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code and status message -- @Response code check @6327" status="passed" time="1.348078"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
   Scenario Outline: To validate the status code and status message -- @Response code check @6327
-    Given I set base URL to "context.base_url" ... passed in 0.002s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.249s
-    Then the response status code should equal "200" ... passed in 0.002s
+    Given I set base URL to "context.base_url" ... passed in 0.001s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.343s
+    Then the response status code should equal "200" ... passed in 0.003s
     And the response status message should equal "OK" ... passed in 0.001s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code and status message -- @Response code check @1234" status="passed" time="1.352357"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code and status message -- @Response code check @1234" status="passed" time="1.422798"><system-out>
 <![CDATA[
 @scenario.begin
 
   @smoke
   Scenario Outline: To validate the status code and status message -- @Response code check @1234
-    Given I set base URL to "context.base_url" ... passed in 0.002s
-    When I make a "GET" request to "/Categories/1234/Details.json?catalogue=false" ... passed in 1.348s
-    Then the response status code should equal "400" ... passed in 0.001s
+    Given I set base URL to "context.base_url" ... passed in 0.003s
+    When I make a "GET" request to "/Categories/1234/Details.json?catalogue=false" ... passed in 1.417s
+    Then the response status code should equal "400" ... passed in 0.002s
     And the response status message should equal "Bad Request" ... passed in 0.001s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.285299"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.324861"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test
   Scenario Outline: To validate the status code with different input parameters -- @Response code check
-    Given I set base URL to "context.base_url" ... passed in 0.002s
-    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":False } ... passed in 1.282s
-    Then the response status code should equal "200" ... passed in 0.001s
-    And the response status message should equal "OK" ... passed in 0.000s
+    Given I set base URL to "context.base_url" ... passed in 0.005s
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":False } ... passed in 1.317s
+    Then the response status code should equal "200" ... passed in 0.002s
+    And the response status message should equal "OK" ... passed in 0.001s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.324629"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.341495"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test
   Scenario Outline: To validate the status code with different input parameters -- @Response code check
-    Given I set base URL to "context.base_url" ... passed in 0.001s
-    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":True } ... passed in 1.322s
+    Given I set base URL to "context.base_url" ... passed in 0.003s
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":True } ... passed in 1.333s
+    Then the response status code should equal "200" ... passed in 0.003s
+    And the response status message should equal "OK" ... passed in 0.002s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.31861"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @Test
+  Scenario Outline: To validate the status code with different input parameters -- @Response code check
+    Given I set base URL to "context.base_url" ... passed in 0.003s
+    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":None } ... passed in 1.314s
     Then the response status code should equal "200" ... passed in 0.001s
     And the response status message should equal "OK" ... passed in 0.001s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the status code with different input parameters -- @Response code check" status="passed" time="1.31055"><system-out>
-<![CDATA[
-@scenario.begin
-
-  @Test
-  Scenario Outline: To validate the status code with different input parameters -- @Response code check
-    Given I set base URL to "context.base_url" ... passed in 0.002s
-    When I make a "GET" request to "/Categories/6327/Details.json" with {"catalogue":None } ... passed in 1.308s
-    Then the response status code should equal "200" ... passed in 0.001s
-    And the response status message should equal "OK" ... passed in 0.000s
-
-@scenario.end
---------------------------------------------------------------------------------
-]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate whether details of Carbon credits under Business-farming-industry" status="passed" time="1.346339"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate whether details of Carbon credits under Business-farming-industry" status="passed" time="1.347542"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test @CarbonCredits @AC
   Scenario: To validate whether details of Carbon credits under Business-farming-industry
-    Given I set base URL to "context.base_url" ... passed in 0.001s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.333s
+    Given I set base URL to "context.base_url" ... passed in 0.003s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.325s
     Then the response status code should equal "200" ... passed in 0.002s
-    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.003s
-    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.002s
-    And value at jsonpath ".CanRelist" in response should be "True" ... passed in 0.002s
-    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" ... passed in 0.003s
+    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.006s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.004s
+    And value at jsonpath ".CanRelist" in response should be "True" ... passed in 0.004s
+    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" ... passed in 0.004s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Basic" status="passed" time="1.342657"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Basic" status="passed" time="1.352993"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test @Promotion
   Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Basic
-    Given I set base URL to "context.base_url" ... passed in 0.003s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.284s
-    Then the response status code should equal "200" ... passed in 0.002s
-    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.049s
-    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.003s
-    And value at jsonpath ".Promotions(Name="Basic").Description" in response should contain "Lowest position in category" ... passed in 0.002s
+    Given I set base URL to "context.base_url" ... passed in 0.001s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.331s
+    Then the response status code should equal "200" ... passed in 0.003s
+    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.005s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.005s
+    And value at jsonpath ".Promotions(Name="Basic").Description" in response should contain "Lowest position in category" ... passed in 0.008s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Gallery" status="passed" time="1.252259"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Gallery" status="passed" time="1.313488"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test @Promotion
   Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Gallery
-    Given I set base URL to "context.base_url" ... passed in 0.002s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.246s
-    Then the response status code should equal "200" ... passed in 0.001s
-    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.001s
-    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.001s
-    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" ... passed in 0.001s
+    Given I set base URL to "context.base_url" ... passed in 0.001s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.297s
+    Then the response status code should equal "200" ... passed in 0.003s
+    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.004s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.005s
+    And value at jsonpath ".Promotions(Name="Gallery").Description" in response should contain "2x larger image" ... passed in 0.004s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature" status="passed" time="1.304605"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature" status="passed" time="1.348389"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test @Promotion
   Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature
-    Given I set base URL to "context.base_url" ... passed in 0.001s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.295s
+    Given I set base URL to "context.base_url" ... passed in 0.007s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.326s
     Then the response status code should equal "200" ... passed in 0.002s
     And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.003s
-    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.002s
-    And value at jsonpath ".Promotions(Name="Feature").Description" in response should contain "4x larger image" ... passed in 0.002s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.005s
+    And value at jsonpath ".Promotions(Name="Feature").Description" in response should contain "4x larger image" ... passed in 0.005s
 
 @scenario.end
 --------------------------------------------------------------------------------
 ]]>
-</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature Combo" status="passed" time="1.307404"><system-out>
+</system-out></testcase><testcase classname="APIPOC.Validate the details of &quot;Carbon credits&quot; farming industry from the API response" name="To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature Combo" status="passed" time="1.382753"><system-out>
 <![CDATA[
 @scenario.begin
 
   @Test @Promotion
   Scenario Outline: To validate the Farming Industry Promotions Name and its Description -- @Promotion Name @Feature Combo
-    Given I set base URL to "context.base_url" ... passed in 0.001s
-    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.298s
+    Given I set base URL to "context.base_url" ... passed in 0.003s
+    When I make a "GET" request to "/Categories/6327/Details.json?catalogue=false" ... passed in 1.366s
     Then the response status code should equal "200" ... passed in 0.002s
-    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.002s
-    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.002s
-    And value at jsonpath ".Promotions(Name="Feature Combo").Description" in response should contain "Includes benefits of Feature" ... passed in 0.002s
+    And value at jsonpath ".CategoryId" in response should be "6327" ... passed in 0.003s
+    And value at jsonpath ".Name" in response should be "Carbon credits" ... passed in 0.004s
+    And value at jsonpath ".Promotions(Name="Feature Combo").Description" in response should contain "Includes benefits of Feature" ... passed in 0.005s
 
 @scenario.end
 --------------------------------------------------------------------------------
