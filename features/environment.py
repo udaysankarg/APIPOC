@@ -2,8 +2,8 @@ import json
 import logging
 import os
 
-FWHOME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-config_file = os.path.join(FWHOME, 'logging_config.ini')
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+config_file = os.path.join(root_dir, 'logging_config.ini')
 
 
 def before_all(context):
