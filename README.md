@@ -71,15 +71,17 @@ Overall project structure is as follows:
     +--venv_p3 // Python3 interpreter is installed here using virtualenv
 
 # SETUP and USAGE GUIDE
-The framework has been successfully tested in latest Python 3.7.4 version on Windows 10 machine. 
+The framework has been successfully tested in latest Python 3.7.4 version on Windows 10 machine and Mac OS. 
 - Prerequisities :
 
-    Any OS (Windows/Linux/Mac)
+    Windows/Mac
     
     Git client 
     
     Python 3.7.4 (https://www.python.org/downloads/release/python-374/)
-    (Make sure that python path is added in system environment variables)  
+    For Windows - After Python installation, make sure PATH system environment variable has below values added to it.
+        1) <python installed path>
+        2) <python installed path>\Scripts    
 
 - Clone project from Github
 
@@ -89,10 +91,17 @@ The framework has been successfully tested in latest Python 3.7.4 version on Win
  
 - Activate virtual environment and install requirements from project root directory (APIPOC/) 
  
+    For Windows
+       
        cd APIPOC
        .\venv_p3\Scripts\activate
        pip install -r requirements.txt
-       
+    
+    For Mac
+    
+       cd APIPOC
+       source venv_p3/Scripts/activate
+       pip3 install -r requirements.txt    
        
 - To execute all feature files (all tests) 
 
