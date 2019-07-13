@@ -76,22 +76,25 @@ The framework has been successfully tested in latest Python 3.7.4 version on Win
 
     Any OS (Windows/Linux/Mac)
     
-    Git client
+    Git client 
+    
+    Python 3.7.4 (https://www.python.org/downloads/release/python-374/)
+    (Make sure that python path is added in system environment variables)  
 
 - Clone project from Github
 
     From the terminal 
     
-        +-- git clone https://github.com/udaysankarg/APIPOC.git
+        git clone https://github.com/udaysankarg/APIPOC.git
  
-
-- Activate the virtualenv 
-
-    From the project home folder activate the Python virtualenv (which has all the requirements already installed)
-
-        .\venv_p3\Scripts\activate
-
-- To execute all feature files (all tests)
+- Activate virtual environment and install requirements from project root directory (APIPOC/) 
+ 
+       cd APIPOC
+       .\venv_p3\Scripts\activate
+       pip install -r requirements.txt
+       
+       
+- To execute all feature files (all tests) 
 
         behave
 
