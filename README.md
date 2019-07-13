@@ -79,9 +79,11 @@ The framework has been successfully tested in latest Python 3.7.4 version on Win
     Git client 
     
     Python 3.7.4 (https://www.python.org/downloads/release/python-374/)
+    
     For Windows - After Python installation, make sure PATH system environment variable has below values added to it.
-        1) <python installed path>
-        2) <python installed path>\Scripts    
+        
+        1) (python installed path)
+        2) (python installed path)\Scripts    
 
 - Clone project from Github
 
