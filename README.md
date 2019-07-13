@@ -82,7 +82,7 @@ The framework has been successfully tested in latest Python 3.7.4 version on Win
 
     From the terminal 
     
-        +-- git clone https://github.com/udaysankarg/APIPOC.git
+        git clone https://github.com/udaysankarg/APIPOC.git
  
 
 - Activate the virtualenv 

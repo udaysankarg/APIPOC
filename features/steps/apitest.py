@@ -40,7 +40,7 @@ def status_msg_check(context, msg):
 
 
 @then(u'value at jsonpath "{json_path}" in response should be "{exp_value}"')
-def step_impl(context, json_path, exp_value):
+def exact_check(context, json_path, exp_value):
     data = context.resp.json()
     logger.debug(data)
     actual_value = jpath.get(json_path, data)
@@ -50,12 +50,14 @@ def step_impl(context, json_path, exp_value):
     logger.info("Pattern \"{}\" found in response".format(exp_value))
 
 
-@then(u'value at jsonpath "{json_path}" in response should contain "{exp_value}"')
-def step_impl(context, json_path, exp_value):
+# can use step or then
+@step(u'value at jsonpath "{json_path}" in response should contain "{exp_value}"')
+def search_pattern(context, json_path, exp_value):
     data = context.resp.json()
     logger.debug(data)
-    actual_value = jpath.get(json_path, data)
-    logger.debug("Actual value from response: {}".format(actual_value))
-    assert exp_value in actual_value, "Pattern not found in response Pattern :{}, Actual value: {}".format(exp_value,
-                                                                                                           actual_value)
+    match_all = jpath.get_all(json_path, data)
+    for match in match_all:
+        logger.debug("Actual value from response: {}".format(match))
+        assert exp_value in match, "Pattern not found in response. Pattern :{}, Actual value: {}".format(exp_value,
+                                                                                                         match)
     logger.info("Pattern \"{}\" found in response".format(exp_value))
